@@ -36,7 +36,11 @@ public class MeteoriteSpawner : MonoBehaviour
 
         GameObject meteor = Instantiate(meteoritePrefab, Vector3.zero, Quaternion.identity);
         meteor.transform.localScale = Vector3.one * scale;
-        meteor.transform.position = GetRandomEdgePosition(scale * 0.5f);
+
+        SpriteRenderer sr = meteor.GetComponent<SpriteRenderer>();
+        float margin = sr != null ? sr.bounds.extents.magnitude : scale;
+        meteor.transform.position = GetRandomEdgePosition(margin);
+
         meteor.GetComponent<Meteorite>().speedMultiplier = speedMult;
 
         float interval = Random.Range(curMinInterval, curMaxInterval);
