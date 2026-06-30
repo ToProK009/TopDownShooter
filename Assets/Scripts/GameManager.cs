@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         }
 
         Bullet.globalSpeedBonus = 0f;
+        Bullet.killSound = Resources.Load<AudioClip>("Sound/KillMeteor");
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         CreateUI();
     }

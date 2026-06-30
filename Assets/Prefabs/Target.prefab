@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e6ee3bf2cce984685c56697167244b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 1
-  maxSpeed: 5
+  minSpeed: 3
+  maxSpeed: 7
   coinValue: 0
   scoreValue: 0
   speedMultiplier: 1

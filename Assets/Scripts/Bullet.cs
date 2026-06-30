@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 15f;
     public static float globalSpeedBonus = 0f;
+    public static AudioClip killSound;
 
     void Start()
     {
@@ -37,6 +38,8 @@ public class Bullet : MonoBehaviour
                 GameManager.Instance.AddCoins(m.coinValue);
                 GameManager.Instance.AddScore(m.scoreValue);
             }
+            if (killSound != null)
+                AudioSource.PlayClipAtPoint(killSound, other.transform.position);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
